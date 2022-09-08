@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let firstname = 'Min';
+        let lastname = "Khnt";
+        console.log(typeof(firstname));
+        console.log(typeof(lastname));
+        console.log(firstname.length);
+        console.log(lastname.length);
+
+        let fullname = firstname.concat(' ',lastname);
+        console.log(fullname);
+        console.log('My name is '+fullname);
+        console.log(`My name is ${fullname}`);
+        console.log(fullname[5]);
+        console.log(fullname.toUpperCase());
+        console.log(fullname.toLowerCase());
+        console.log(fullname.substr(4,6));
+
+        let rep = 'i want to fuck';
+        let repre = rep.replace('fuck', 'suck');
+        console.log(repre);
+
+        let money = '10,000';
+        money = money.replace(/\,/g,'');
+        console.log(typeof(money));
+        money = Number(money);
+        console.log(typeof(money));
+    </script>
+</body>
+</html>
