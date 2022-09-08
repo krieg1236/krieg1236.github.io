@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exam Pass</h1>
+    <form action="" name="myform">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+        <br><br>
+        <label for="html">HTML</label>
+        <input type="number" name="html" id="html" min="0" max="100">
+        <br><br>
+        <label for="css">CSS</label>
+        <input type="number" name="css" id="css" min="0" max="100">
+        <br><br>
+        <label for="js">JavaScript</label>
+        <input type="number" name="js" id="js" min="0" max="100">
+        <br><br>
+        <button type="submit" onclick="result()">Submit</button>
+    </form>
+
+    <script>
+        function result() {
+            // alert('hello')
+            let name = document.myform.name.value;
+            console.log(name);
+            let html = document.myform.html.value;
+            console.log(html);
+            let css = document.myform.css.value;
+            console.log(css);
+            let js = document.myform.js.value;
+            console.log(js);
+
+            if (html >= 50 && css >= 50 && js >= 50){
+                document.write('<h1>Gway Si '+name+' has passed deeze nuts.<h1>');
+            } else {
+                document.write('<h1>Nephew '+name+' dissapointment haiyaaa</h1>')
+            }
+        }
+// if (html >= 80 && css >= 80 && js >= 80 )
+    </script>
+</body>
+</html>
