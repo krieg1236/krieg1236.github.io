@@ -5,28 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            background-color: #f5f4ef;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        label{
+            display: inline-block;
+            width: 50px;
+            text-align: left;
+        }
+        button{
+            background-color: #53524e;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 7px;
+        }
+        h2,h3{
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: normal;
+        }
+        /* div.script{
+            background-color: red;
+            font-family: 'Courier New', Courier, monospace;
+        } */
+    </style>
 </head>
 <body>
-    <h1>Exam Pass</h1>
-    <form action="" name="myform">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name">
+    <h1 align="center">Exam Pass</h1>
+    <form action="" name="myform" align="center">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" value="jevin">
         <br><br>
-        <label for="html">HTML</label>
-        <input type="number" name="html" id="html" min="0" max="100">
-        <br><br>
-        <label for="css">CSS</label>
-        <input type="number" name="css" id="css" min="0" max="100">
-        <br><br>
-        <label for="js">JavaScript</label>
-        <input type="number" name="js" id="js" min="0" max="100">
-        <br><br>
+        </div>
+        <div>
+            <label for="html">HTML</label>
+            <input type="number" name="html" id="html" value="49">
+            <br><br>
+        </div>
+        <div>
+            <label for="css">CSS</label>
+            <input type="number" name="css" id="css" value="49">
+            <br><br>
+        </div>
+        <div>
+            <label for="js">JS</label>
+            <input type="number" name="js" id="js" value="49">
+            <br><br>
+        </div>
         <button type="submit" onclick="result()">Submit</button>
     </form>
 
-    <script>
+    <script id="script">
         function result() {
-            // alert('hello')
             let name = document.myform.name.value;
             console.log(name);
             let html = document.myform.html.value;
@@ -36,13 +71,46 @@
             let js = document.myform.js.value;
             console.log(js);
 
-            if (html >= 50 && css >= 50 && js >= 50){
-                document.write('<h1>Gway Si '+name+' has passed deeze nuts.<h1>');
-            } else {
-                document.write('<h1>Nephew '+name+' dissapointment haiyaaa</h1>')
+            if (isNaN(html, css, js) || html, css, js <= 1 || html, css, js >= 100){    
+                alert('Invalid input. Try again.');
+            } else if (html >= 50 && css >= 50 && js >= 50){
+                document.write('<h1>'+name+' has passed the exam.<h1>');
+                    if(html >=80 && html <= 100 || css >=80 && css <= 100 || js >=80 && js <= 100){
+                        if(html >= 80){
+                        document.write('<h2>'+name+' has passed HTML with Distinction. '+html+' marks.</h1>')
+                        }
+                        if(css >= 80){
+                        document.write('<h2>'+name+' has passed CSS with Distinction. '+css+' marks.</h1>')
+                        }
+                        if(js >= 80){
+                        document.write('<h2>'+name+' has passed JavaScript with Distinction. '+js+' marks.</h1>')
+                        }
+                    }
+                }
+            else{
+                if(html <50 || css <50 || js < 50){
+                    document.write('<h2 align="center">'+name+' has failed.</h2>')
+                    document.write(`<h3 align="center">Your marks are:</h3>
+                        <font size="30px" face="Courier New">
+                        <table id="table" align="center" cellpadding="5px" cellspacing="15px">
+                            <tr>
+                                <td>HTML</td>
+                                <td>${html}</td>
+                            </tr>
+                            <tr>
+                                <td>CSS</td>
+                                <td>${css}</td>
+                            </tr>
+                            <tr>
+                                <td>JS</td>
+                                <td>${js}</td>
+                            </tr>
+                        </table>
+                    `)
+                }
             }
+        document.getElementById("script").style.backgroundColor="red"
         }
-// if (html >= 80 && css >= 80 && js >= 80 )
     </script>
 </body>
 </html>
