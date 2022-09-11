@@ -16,12 +16,9 @@
             text-align: left;
             font-size: 20px;
         }
-        input{
-            display: inline-block;
-            width: 100px;
-        }
         button{
             background-color: #53524e;
+            font-size: 15px;
             border: none;
             color: white;
             padding: 8px 16px;
@@ -45,12 +42,17 @@
             font-family:'Courier New', Courier, monospace; 
             font-size: 16px;
             text-align: center;
-            background-color: #f5f4ef;
+            background-color: transparent;
             padding: 5px 10px;
             margin: 8px 0;
             box-sizing: border-box;
             border: none;
             border-bottom: 1px solid #53524e;
+            display: inline-block;
+            width: 100px;
+        }
+        input:focus{
+            outline: none;
         }
         footer {
             clear: both;
@@ -73,6 +75,15 @@
         a:active {
             text-decoration: underline;
         }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+  
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
     </style>
 </head>
 <body>
@@ -81,22 +92,22 @@
     <form action="" name="myform" align="center" id="font">
         <div>
             <label for="name">name</label>
-            <input type="text" name="name" id="name">
+            <input type="text" name="name" id="name" required>
         <br><br>
         </div>
         <div>
             <label for="html">html</label>
-            <input type="number" name="html" id="html" max="100" min="0">
+            <input type="number" name="html" id="html" max="100" min="0" required>
             <br><br>
         </div>
         <div>
             <label for="css">css</label>
-            <input type="number" name="css" id="css" max="100" min="0">
+            <input type="number" name="css" id="css" max="100" min="0" required>
             <br><br>
         </div>
         <div>
             <label for="js">js</label>
-            <input type="number" name="js" id="js" max="100" min="0">
+            <input type="number" name="js" id="js" max="100" min="0" required>
             <br><br>
         </div>
         <button type="submit" onclick="result()" id="font">Submit</button>
@@ -116,7 +127,7 @@
             if (isNaN(html) || html < 0 || html > 100 || isNaN(css) || css < 0 || css > 100 || isNaN(js) || js < 0 || js > 100){    
                 alert('Type your mark again between 0 to 100.');
             } else if (html >= 50 && css >= 50 && js >= 50){
-                document.write('<div class="position"><h1 id="font">'+name+' has passed the exam.<h1>');
+                document.write(`<div class="position"><h1 id="font"> ${name} has passed the exam.<h1>`);
                     if(html >=80 && html <= 100 || css >=80 && css <= 100 || js >=80 && js <= 100){
 
                         //first approach
@@ -130,7 +141,7 @@
                         // document.write('<h2 id="font">'+name+' has passed JavaScript with Distinction. '+js+' marks.</h1>')
                         // }
 
-                        document.write(`<h3 id="font">congratulations! you've passed the exam with distinctions.<br>your marks are:</h3>
+                        document.write(`<h3 id="font">congratulations! you've passed the exam with distinction.<br>your marks are:</h3>
                         <table id="table" align="center" cellpadding="15px" cellspacing="30px">
                             <tr>
                                 <th >subjects</th>
@@ -149,13 +160,13 @@
                                 <td>${js}</td>
                             </tr>
                         </table>
-                        <p id="font" style="font-size:12px;">refresh page to resubmit the form. i give up on making a button for that lol.</p></div>
+                        <p id="font"><a href="exampass.html">Resubmit</a></p>
                     `);
                     }
             }
             else{
                 if(html <= 49 || css <= 49 || js <= 49){
-                    document.write('<div class="position"><h1 id="font">'+name+' has failed.</h1>')
+                    document.write(`<div class="position"><h1 id="font"> ${name} has failed.</h1>`)
                     document.write(`<h3 id="font">your marks are:</h3>
                         <table id="table" align="center" cellpadding="15px" cellspacing="30px">
                             <tr>
@@ -175,7 +186,8 @@
                                 <td>${js}</td>
                             </tr>
                         </table>
-                        <p id="font" style="font-size:12px;">refresh page to resubmit the form. i give up on making a button for that lol.</p></div>
+                        <p id="font"><a href="exampass.html">Resubmit</a></p>
+                        </div>
                     `);
                 }
             }
@@ -212,6 +224,19 @@
                     -moz-transform: translateX(-50%) translateY(-50%);
                     -webkit-transform: translateX(-50%) translateY(-50%);
                     transform: translateX(-50%) translateY(-50%);
+                }
+                a{
+                    background-color: #53524e;
+                    border: none;
+                    color: white;
+                    padding: 8px 16px;
+                    text-decoration: none;
+                    cursor: pointer;
+                    border-radius: 7px;
+                }
+                p{
+                    margin-top: 30px;
+                    font-size: 15px;
                 }
         `;
         document.head.appendChild(style);
