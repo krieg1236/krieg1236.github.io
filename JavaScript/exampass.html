@@ -128,20 +128,20 @@
                 alert('Type your mark again between 0 to 100.');
             } else if (html >= 50 && css >= 50 && js >= 50){
                 document.write(`<div class="position"><h1 id="font"> ${name} has passed the exam.<h1>`);
-                    if(html >=80 && html <= 100 || css >=80 && css <= 100 || js >=80 && js <= 100){
+                if(html >=80 && html <= 100 || css >=80 && css <= 100 || js >=80 && js <= 100){
 
-                        //first approach
-                        // if(html >= 80){
-                        // document.write('<h2 id="font">'+name+' has passed HTML with Distinction. '+html+' marks.</h1>')
-                        // }
-                        // if(css >= 80){
-                        // document.write('<h2 id="font">'+name+' has passed CSS with Distinction. '+css+' marks.</h1>')
-                        // }
-                        // if(js >= 80){
-                        // document.write('<h2 id="font">'+name+' has passed JavaScript with Distinction. '+js+' marks.</h1>')
-                        // }
+                    //first approach
+                    // if(html >= 80){
+                    // document.write('<h2 id="font">'+name+' has passedHTML with Distinction. '+html+' marks.</h1>')
+                    // }
+                    // if(css >= 80){
+                    // document.write('<h2 id="font">'+name+' has passedCSS with Distinction. '+css+' marks.</h1>')
+                    // }
+                    // if(js >= 80){
+                    // document.write('<h2 id="font">'+name+' has passedJavaScript with Distinction. '+js+' marks.</h1>')
+                    // }
 
-                        document.write(`<h3 id="font">congratulations! you've passed the exam with distinction.<br>your marks are:</h3>
+                    document.write(`<h3 id="font">congratulations! you've passed the exam with distinction.<br>your marks are:</h3>
                         <table id="table" align="center" cellpadding="15px" cellspacing="30px">
                             <tr>
                                 <th >subjects</th>
@@ -160,9 +160,10 @@
                                 <td>${js}</td>
                             </tr>
                         </table>
-                        <p id="font"><a href="exampass.html">Resubmit</a></p>
+                        
                     `);
-                    }
+                }
+                document.write(`<p id="font" class="position" style="position: relative;"><a href="exampass.html">Resubmit</a></p>`);
             }
             else{
                 if(html <= 49 || css <= 49 || js <= 49){
