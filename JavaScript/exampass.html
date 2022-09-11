@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>exampass</title>
     <style>
         body{
             background-color: #f5f4ef;
-            font-family: 'Courier New', Courier, monospace;
+            align-content: center;
         }
         label{
             display: inline-block;
-            width: 50px;
+            width: 70px;
             text-align: left;
+            font-size: 20px;
+        }
+        input{
+            display: inline-block;
+            width: 100px;
         }
         button{
             background-color: #53524e;
@@ -24,40 +29,77 @@
             cursor: pointer;
             border-radius: 7px;
         }
-        h2,h3{
-            font-family: 'Courier New', Courier, monospace;
+        #font{
+            font-family:'Courier New', Courier, monospace; 
             font-weight: normal;
         }
-        /* div.script{
-            background-color: red;
-            font-family: 'Courier New', Courier, monospace;
-        } */
+        .position{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -moz-transform: translateX(-50%) translateY(-50%);
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+        }
+        input {
+            font-family:'Courier New', Courier, monospace; 
+            font-size: 16px;
+            text-align: center;
+            background-color: #f5f4ef;
+            padding: 5px 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 1px solid #53524e;
+        }
+        footer {
+            clear: both;
+            height: 100px;
+            bottom: 0;
+            position: fixed;
+            width: 100%;
+            height: 5rem; 
+        }
+        a:link {
+            text-decoration: none;
+            color: black;
+        }
+        a:visited {
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        a:active {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <h1 align="center">Exam Pass</h1>
-    <form action="" name="myform" align="center">
+<div class="position">
+    <h1 align="center" id="font">exam pass</h1>
+    <form action="" name="myform" align="center" id="font">
         <div>
-            <label for="name">Name</label>
+            <label for="name">name</label>
             <input type="text" name="name" id="name" value="jevin">
         <br><br>
         </div>
         <div>
-            <label for="html">HTML</label>
-            <input type="number" name="html" id="html" value="49">
+            <label for="html">html</label>
+            <input type="number" name="html" id="html" value="49" max="100" min="0">
             <br><br>
         </div>
         <div>
-            <label for="css">CSS</label>
-            <input type="number" name="css" id="css" value="49">
+            <label for="css">css</label>
+            <input type="number" name="css" id="css" value="49" max="100" min="0">
             <br><br>
         </div>
         <div>
-            <label for="js">JS</label>
-            <input type="number" name="js" id="js" value="49">
+            <label for="js">js</label>
+            <input type="number" name="js" id="js" value="49" max="100" min="0">
             <br><br>
         </div>
-        <button type="submit" onclick="result()">Submit</button>
+        <button type="submit" onclick="result()" id="font">Submit</button>
     </form>
 
     <script id="script">
@@ -71,46 +113,117 @@
             let js = document.myform.js.value;
             console.log(js);
 
-            if (isNaN(html, css, js) || html, css, js <= 1 || html, css, js >= 100){    
-                alert('Invalid input. Try again.');
+            if (isNaN(html) || html < 0 || html > 100 || isNaN(css) || css < 0 || css > 100 || isNaN(js) || js < 0 || js > 100){    
+                alert('Type your mark again between 0 to 100.');
             } else if (html >= 50 && css >= 50 && js >= 50){
-                document.write('<h1>'+name+' has passed the exam.<h1>');
+                document.write('<div class="position"><h1 id="font">'+name+' has passed the exam.<h1>');
                     if(html >=80 && html <= 100 || css >=80 && css <= 100 || js >=80 && js <= 100){
-                        if(html >= 80){
-                        document.write('<h2>'+name+' has passed HTML with Distinction. '+html+' marks.</h1>')
-                        }
-                        if(css >= 80){
-                        document.write('<h2>'+name+' has passed CSS with Distinction. '+css+' marks.</h1>')
-                        }
-                        if(js >= 80){
-                        document.write('<h2>'+name+' has passed JavaScript with Distinction. '+js+' marks.</h1>')
-                        }
-                    }
-                }
-            else{
-                if(html <50 || css <50 || js < 50){
-                    document.write('<h2 align="center">'+name+' has failed.</h2>')
-                    document.write(`<h3 align="center">Your marks are:</h3>
-                        <font size="30px" face="Courier New">
-                        <table id="table" align="center" cellpadding="5px" cellspacing="15px">
+
+                        //first approach
+                        // if(html >= 80){
+                        // document.write('<h2 id="font">'+name+' has passed HTML with Distinction. '+html+' marks.</h1>')
+                        // }
+                        // if(css >= 80){
+                        // document.write('<h2 id="font">'+name+' has passed CSS with Distinction. '+css+' marks.</h1>')
+                        // }
+                        // if(js >= 80){
+                        // document.write('<h2 id="font">'+name+' has passed JavaScript with Distinction. '+js+' marks.</h1>')
+                        // }
+
+                        document.write(`<h3 id="font">congratulations! you've passed the exam with distinctions.<br>your marks are:</h3>
+                        <table id="table" align="center" cellpadding="15px" cellspacing="30px">
                             <tr>
-                                <td>HTML</td>
+                                <th >subjects</th>
+                                <th>marks</th>
+                            </tr>
+                            <tr>
+                                <td>html</td>
                                 <td>${html}</td>
                             </tr>
                             <tr>
-                                <td>CSS</td>
+                                <td>css</td>
                                 <td>${css}</td>
                             </tr>
                             <tr>
-                                <td>JS</td>
+                                <td>js</td>
                                 <td>${js}</td>
                             </tr>
                         </table>
-                    `)
+                        <p id="font" style="font-size:12px;">refresh page to resubmit the form. i give up on making a button for that lol.</p></div>
+                    `);
+                    }
+            }
+            else{
+                if(html <= 49 || css <= 49 || js <= 49){
+                    document.write('<div class="position"><h1 id="font">'+name+' has failed.</h1>')
+                    document.write(`<h3 id="font">your marks are:</h3>
+                        <table id="table" align="center" cellpadding="15px" cellspacing="30px">
+                            <tr>
+                                <th >subjects</th>
+                                <th>marks</th>
+                            </tr>
+                            <tr>
+                                <td>html</td>
+                                <td>${html}</td>
+                            </tr>
+                            <tr>
+                                <td>css</td>
+                                <td>${css}</td>
+                            </tr>
+                            <tr>
+                                <td>js</td>
+                                <td>${js}</td>
+                            </tr>
+                        </table>
+                        <p id="font" style="font-size:12px;">refresh page to resubmit the form. i give up on making a button for that lol.</p></div>
+                    `);
                 }
             }
-        document.getElementById("script").style.backgroundColor="red"
-        }
+        // var font = document.getElementById("font");
+        // font.style.fontWeight = "normal";
+        // font.style.fontFamily = "Courier New";
+
+        const style = document.createElement('style');
+        style.innerHTML = `
+                body{
+                    background-color: #f5f4ef;
+                }
+                #font{
+                    font-family: 'Courier New', Courier, monospace;
+                    font-weight: normal;
+                    text-align: center;
+                }
+                table{
+                    font-family: 'Courier New', Courier, monospace;
+                    font-weight: normal;
+                    border-collapse: collapse;
+                    width: 50%;
+                }
+                th, td {
+                    padding: 8px;
+                    text-align: center;
+                    border-bottom: 1px solid #ddd;
+                    font-weight: normal;
+                }
+                .position{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    -moz-transform: translateX(-50%) translateY(-50%);
+                    -webkit-transform: translateX(-50%) translateY(-50%);
+                    transform: translateX(-50%) translateY(-50%);
+                }
+        `;
+        document.head.appendChild(style);
+    }
     </script>
+</div>
+<div>
+    <footer id="font">
+    <p align="center">Made by: komin &copy; All rights reserved.<br>
+    <a href="krieg1236.github.io">krieg1236.github.io</a> </p>
+    </footer>
+</div>
 </body>
+</html>
 </html>
