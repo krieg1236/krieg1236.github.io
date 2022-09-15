@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">DOM <em>Selector</em></h1>
+    <h3 id="lg">Languages</h3>
+    <p class="lang">HTML</p>
+    <p class="lang">CSS</p>
+    <p class="lang">JavaScript</p>
+    <h2 id="add1"></h2>
+    <p id="add2"></p>
+
+    <script>
+        let heading = document.getElementById('heading');
+        console.log(heading);
+        console.log(heading.innerHTML);
+        console.log(heading.innerText);
+
+        let add1 = document.getElementById('add1');
+        console.log(add1);
+        let add2 = document.getElementById('add2');
+        console.log(add2);
+        add1.innerHTML = '<i>InnerHTML</i>'
+        add2.innerText = '<i>InnerText</i>'
+
+        let classlang = document.getElementsByClassName('lang');
+        console.log(classlang);
+        console.log(classlang[0]);
+        console.log(classlang[0].innerText);
+
+        let tagname = document.getElementsByTagName('p');
+        console.log(tagname);
+        console.log(tagname[1]);
+        console.log(tagname[1].innerText);
+
+        let q_lg = document.querySelector('#heading');
+        console.log(q_lg);
+
+        let q_lang = document.querySelector('.lang');
+        console.log(q_lang);
+
+        let q_tag = document.querySelector('p');
+        console.log(q_tag);
+
+        let q_lang_all = document.querySelectorAll('.lang');
+        console.log(q_lang_all);
+
+        let q_tag_all = document.querySelectorAll('p');
+        console.log(q_tag_all);
+    </script> 
+</body> 
+</html>
