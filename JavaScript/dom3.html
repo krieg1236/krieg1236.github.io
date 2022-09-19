@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>CSS manipulation with DOM</h2>
+    <button onclick="action()">Change CSS</button><br><br>
+    <img src="jsdom1.jpeg" alt="" id="img" width="720" height="480"><br><br>
+    <img src="jsdom2.jpeg" alt="" id="img2" width="480" height="480" onmouseover="enlarge()" onmouseout="smol()">
+    <script>
+        function action() {
+            let img = document.querySelector('img');
+            img.style.width = '1280px';
+            img.style.height = '720px';
+
+            doucument.querySelector('#heading').style.color = 'red';
+            document.querySelector('#heading').style.backgroundcolor = 'black';
+        }
+
+        let image = document.querySelector('#img2');
+        function enlarge() {
+            image.style.width = '580px';
+            image.style.height = '580px';
+        }
+
+        function smol() {
+            image.style.width = '480px'
+            image.style.hieght = '300px'
+        }
+
+    </script>
+</body>
+</html>

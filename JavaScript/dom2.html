@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Create textNode Elements and Attributes</h1>
+    <button onclick="changeclr()" id="heading">Change heading colour</button>
+    <p id="text_node"></p>
+    <button onclick="create_textNode()">Create textNode</button>
+    <button onclick="create_element()">Create Element</button> <br><br>
+    <input type="text" name="name" id="name">
+    <button onclick="add()">Add</button>
+    <ul id="ulist"></ul>
+
+    <script>
+        function create_textNode() {
+            // alert('hello');
+            let hi = document.createTextNode('Hello JavaScript DOM');
+            console.log(hi);
+            let p = document.querySelector('#text_node');
+            p.appendChild(hi);
+        }
+
+        function create_element() {
+            // alert('hi')
+            let h3 = document.createElement('h3');
+            console.log(h3);
+            h3.innerText = 'This is h3';
+            console.log(h3);
+            document.body.appendChild(h3);
+        }
+
+        function add() {
+            let name = document.querySelector('#name').value;
+            console.log(name);
+            let li = document.createElement('li');
+            li.innerText = name;
+            console.log(li);
+            let ul = document.querySelector('#ulist');
+            ul.appendChild(li);
+
+            let s = document.createElement('style');
+            s.innerHTML = `
+                #ulist {
+                    list-style-type: upper-roman;
+                }
+            `
+            document.body.appendChild(s);
+        }
+
+        function changeclr() {
+            let heading = document.querySelector('#heading');
+            let atr = heading.getAttribute('style');
+            console.log(atr);
+            if(atr){
+                heading.removeAttribute('style');
+            } else {
+                heading.setAttribute('style', 'color:red');
+            }
+            // heading.appendChild(atr);
+        }
+    </script>
+</body>
+</html>
