@@ -1,7 +1,74 @@
 h1{
     color: red;
     text-align: center;
+    font-size: 35px;
+    width: 100%;
 }
 p{
     color: green;
+}
+
+/* universal selector */
+* {
+    color: green;
+    /* margin: 0px;
+    padding: 0px; */
+}
+/* tag/element selector */
+small {
+    display: inline-block;
+    text-indent: 50px;
+    letter-spacing: 10px;
+    word-spacing: 20px;
+    line-height: 40px;
+    color: brown;
+    font-size: 24px;
+    font-style: italic;
+}
+a[title="google"]{
+    color: black;
+}
+
+/* ID Selector */
+#idselec{
+    color: violet;
+}
+
+/* Class Selector */
+.classselec{
+    color: red;
+    font-size: x-large;
+    word-spacing: 20px;
+    line-height: 30px;
+}
+
+/* desc selector */
+.desc a {
+    color: red;
+}
+
+/* child selector */
+.child>a {
+    color: black;
+}
+
+/* pseudo selector */
+a:link {
+    color: red;
+}
+a:hover{
+    color: yellow;
+    letter-spacing: 10px;
+}
+a:active{
+    color: green;
+}
+a:visited{
+    color: brown;
+}
+
+/* target */
+:target{
+    color: red;
+    border: 1px solid black;
 }
