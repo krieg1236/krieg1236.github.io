@@ -73,6 +73,31 @@ a:visited{
     border: 1px solid black;
 }
 
+/* Border */
+.borderone{
+    border: 2px dashed red;
+}
+.bordertwo{
+    border-left: 4px solid red;
+    border-right: 4px solid red;
+}
+
+.borderwidth{
+    border-width: 10px;
+    border-style: solid;
+}
+
+.borderstyle{
+    border-style: dashed;
+    /* all four sides => Top, Right, Bottom, Left*/
+    border-style: dashed solid;
+    /* T&B L&R */
+    border-style: solid dotted dashed;
+    /* T /l&R/ B */
+    border-style: dashed solid double dotted;
+    /* T / R / B / L */
+}
+
 /* margin */
 .margin1{
     border: 1 solid black;
@@ -119,26 +144,36 @@ a:visited{
 }
 
 /* grid */
-.grid1 div, .grid2 div, .grid3 div {
+.grid1 div,.grid2 div,.grid3 div,.grid4 div,.grid5 div,.grid6 div{
     padding: 20px;
     text-align: center;
-    color: white;
+    color:white;
 }
-.grid1, .grid2, .grid3 {
+.grid1, .grid2, .grid3, .grid4, .grid5, .grid6{
     display: grid;
     grid-template-columns: auto auto auto;
 }
+
 .grid2{
     grid-column-gap: 50px;
 }
+
 .grid3{
-    grid-row-gap: 40px;
+    grid-row-gap: 20px;
 }
-.columadd{
+
+.grid4{
+    /* grid-gap: 50px; */
+    grid-row-gap:20px;
+    grid-column-gap: 50px;
+}
+
+.columnadd{
     grid-column-start: 1;
     grid-column-end: 3;
 }
+
 .rowadd{
-    grid-column-start: 1;
-    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
 }
