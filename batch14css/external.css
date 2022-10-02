@@ -177,3 +177,57 @@ a:visited{
     grid-row-start: 1;
     grid-row-end: 3;
 }
+
+/* positon */
+.relative_parent{
+    border: 1px solid black;
+    width: 800px;
+    height: 500px;
+}
+.relative{
+    border: 1px solid blue;
+    width: 500px;
+    height: 200px;
+    position: relative;
+    left: 50px;
+}
+.absolute_parent{
+    border: 1px solid black;
+    width: 800px;
+    height: 500px;
+    position: relative;
+}
+.absolute{
+    border: 1px solid red;
+    width: 500px;
+    height: 200px;
+    position: absolute;
+    top: 100px;
+    left: 50px;
+}
+.fixed_parent{
+    border: 1px solid black;
+    width: 800px;
+    height: 500px;
+}
+.fixed{
+    border: 1px solid red;
+    width: 500px;
+    height: 200px;
+    position: fixed;
+    top: 100px;
+    right: 50px;
+}
+
+/* font */
+.f_on{
+    font-family: 'Noto Sans Mono', monospace;
+    font-size:21px;;
+}
+@font-face {
+    font-family: augustus;
+    src: url(font/AUGUSTUS.TTF);
+}
+.f_off{
+    font-family: augustus;
+}
